@@ -1,0 +1,19 @@
+.register {
+  margin: 100px;
+  padding: 20px;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+mat-form-field {
+  margin: 20px;
+  display: block;
+  width: 300px;
+}
+
+mat-hint.error {
+  color: indianred;
+}

@@ -50,6 +50,7 @@ import { PageNotFoundComponent } from './components/error-pages/page-not-found/p
 import { InternalServerErrorComponent } from './components/error-pages/internal-server-error/internal-server-error.component';
 import { ErrorDetailComponent } from './components/error-pages/error-detail/error-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { LoginComponent } from './components/login/login.component';
     InternalServerErrorComponent,
     ErrorDetailComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

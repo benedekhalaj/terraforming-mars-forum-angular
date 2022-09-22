@@ -1,0 +1,58 @@
+<mat-card class="register">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <!--  First name  -->
+    <mat-form-field appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput type="text" formControlName="firstName">
+    </mat-form-field>
+
+    <!--  Last name  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Last name</mat-label>
+      <input matInput type="text" formControlName="lastName">
+    </mat-form-field>
+
+    <!--  Username  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" formControlName="username">
+    </mat-form-field>
+
+    <!--  E-mail  -->
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+
+    <!--  Confirm E-mail  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm E-mail</mat-label>
+      <input matInput type="email" formControlName="confirmEmail">
+      <mat-hint class="error" *ngIf="getEmail() && getConfirmEmail() && getEmail().length > 0 && getConfirmEmail().length > 0 &&
+            getEmail() != getConfirmEmail()">Provided e-mails are different
+      </mat-hint>
+    </mat-form-field>
+
+    <!--  Password  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!--  Confirm Password  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="confirmPassword">
+      <mat-hint class="error" *ngIf="getPassword() && getConfirmPassword() && getPassword().length > 0 && getConfirmPassword().length > 0 &&
+            getPassword() != getConfirmPassword()">Provided password are different
+      </mat-hint>
+    </mat-form-field>
+  </form>
+
+  <button mat-flat-button color="primary" type="submit">Register</button>
+</mat-card>

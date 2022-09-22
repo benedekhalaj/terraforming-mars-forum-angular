@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserRegisterDialogComponent} from "../user/register/user-register-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {RegistrationService} from "../../services/registration/registration.service";
@@ -15,12 +15,13 @@ export class NavigationBarComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private userService: UserService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  openRegisterModal():void {
+  openRegisterModal(): void {
     const registerDialog = this.dialog.open(UserRegisterDialogComponent,
       {
         width: "35em",
@@ -33,20 +34,21 @@ export class NavigationBarComponent implements OnInit {
         }
       });
     registerDialog.afterClosed().subscribe(result => {
-      if (result) { //TODO: registration requirements check
-        this.userService.addUser(result);
-      }}
+        if (result) { //TODO: registration requirements check
+          this.userService.addUser(result);
+        }
+      }
     );
   }
 
-  openLoginModal():void {
+  openLoginModal(): void {
     const loginDialog = this.dialog.open(LoginDialogComponent,
       {
-       width: "35em",
-       data: {
-         email: "",
-         password: "",
-       }
+        width: "35em",
+        data: {
+          email: "",
+          password: "",
+        }
       });
     loginDialog.afterClosed().subscribe(result => {
       if (result) { //TODO: login requirements check
