@@ -14,7 +14,8 @@ import {
 } from "./components/error-pages/internal-server-error/internal-server-error.component";
 
 const routes: Routes = [
-  {path: '', component: PostContainerComponent},
+  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: 'home', component: PostContainerComponent},
   {path: 'user-posts', component: UserPostContainerComponent},
   {path: 'league-post/:id', component: LeaguePostDetailComponent},
   {path: 'league-posts', component: LeaguePostContainerComponent},
