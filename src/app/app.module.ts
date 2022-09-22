@@ -49,6 +49,7 @@ import {MatSelectModule} from "@angular/material/select";
 import { PageNotFoundComponent } from './components/error-pages/page-not-found/page-not-found.component';
 import { InternalServerErrorComponent } from './components/error-pages/internal-server-error/internal-server-error.component';
 import { ErrorDetailComponent } from './components/error-pages/error-detail/error-detail.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { ErrorDetailComponent } from './components/error-pages/error-detail/erro
     PageNotFoundComponent,
     InternalServerErrorComponent,
     ErrorDetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,12 @@ import {PageNotFoundComponent} from "./components/error-pages/page-not-found/pag
 import {
   InternalServerErrorComponent
 } from "./components/error-pages/internal-server-error/internal-server-error.component";
+import {LoginComponent} from "./components/login/login.component";
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
   {path: 'home', component: PostContainerComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'user-posts', component: UserPostContainerComponent},
   {path: 'league-post/:id', component: LeaguePostDetailComponent},
   {path: 'league-posts', component: LeaguePostContainerComponent},
